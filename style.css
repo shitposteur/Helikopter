@@ -1,0 +1,384 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: linear-gradient(#b3d9ff, #d580ff);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    background-color: rgba(51, 51, 51, 0.9);
+    border-radius: 0 0 20px 20px;
+}
+
+
+.heading {
+    padding-bottom: 0.9 rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #eee;
+}
+
+@media only screen and (max-width: 650px) {
+    .heading {
+        font-size: 0.8rem;
+        padding: 0.4rem;
+    }
+    
+}
+
+.helikopter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+
+/*TOP PART*/
+.top-blade-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 157px;
+}
+
+.blade-rotator {
+    display: flex;
+    justify-content: center;
+    animation-name: top-fan-rotate;
+    animation-iteration-count: infinite;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+}
+
+@keyframes top-fan-rotate {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.blade {
+    background-color: #333399;
+    width: 180px;
+    height: 10px;
+}
+
+.blade-attachment {
+    background-color: #333333;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.blade-1 {
+    border-left: 8px solid #ff1a1a;
+    border-radius: 20% 35% 25% 20%;
+}
+
+.blade-2 {
+    border-right: 8px solid #ff1a1a;
+    border-radius: 35% 20% 20% 25%;  
+}
+
+.body-attachment {
+    width: 10px;
+    height: 20px;
+    background-color: #333333;
+    border-radius: 30%;
+}
+
+@media only screen and (max-width: 650px) {
+    .top-blade-container {
+        padding-left: 87.2135px;
+    }
+    
+    .blade {
+        width: 100px;
+        height: 5.55556px;    
+    }
+
+    .blade-attachment {
+        width: 8.3325px;
+        height: 8.3325px;
+    }
+
+    .body-attachment {
+        width: 5.556px;
+        height: 11.111px;
+    }
+}
+
+/*BODY PART*/
+.helikopter-body {
+    display: flex;
+    justify-content: center;
+}
+
+.main-body {
+    width: 120px;
+    height: 100px;
+    background-color: #006600;
+    border-radius: 0 0 0 40%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.door {
+    background-color: #333333;
+    height: 66%;
+    width: 36%;
+    border-radius: 35% 35% 15% 15%;
+    margin-left: 55%;
+    margin-bottom: 5%;
+
+}
+
+.tail {
+    width: 180px;
+    height: 60px;
+    background-color: #006600;
+    order:-1;
+    border-radius: 10% 0 0 90%;
+    display: flex;
+}
+
+.body-front {
+    width: 90px;
+    height: 100px;
+    background-color: #006600;
+    border-radius: 0 85% 30% 0;
+}
+
+.window {
+    height: 40%;
+    width: 70%;
+    margin-top: 15%;
+    margin-left: 28%;
+    border-radius: 15% 90% 15% 40%;
+    z-index: -1;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+.tail-fan-container {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    left: 3%;
+    top: -35%;
+    animation-name: tail-fan-rotate;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+.tail-fan {
+    width: 10px;
+    height: 27px;
+    background-color: #333399;
+    border-radius: 30%;
+}
+
+.tail-fan1 {
+    border-top: 8px solid #ff1a1a;
+}
+
+.tail-fan2 {
+    border-bottom: 8px solid #ff1a1a;
+}
+
+.tail-fan-connector {
+    width: 10px;
+    height: 10px;
+    background-color: #333333;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 650px) {
+    .main-body {
+        width: 66.6667px;
+        height: 55.5556px;
+    }
+    
+    .tail {
+        width: 99.999px;
+        height: 33.333px;
+        order:-1;
+    }
+    
+    .body-front {
+        width: 49.9995px;
+        height: 55.55556px;
+    }
+
+    .tail-fan {
+        width: 5.5556px;
+        height: 16.6665px;
+    }
+    
+    .tail-fan-connector {
+        width: 5.5556px;
+        height: 5.5556px;
+    }
+}
+
+@keyframes tail-fan-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    
+}
+
+/*BOTTOM PART*/
+.helikopter-legs {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 180px;
+}
+
+.leg-strut {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.leg {
+    width: 8px;
+    height: 40px;
+    background-color: #006600;
+}
+
+.leg-1 {
+    margin-right: 40px;
+    transform: skew(-15deg);
+}
+
+.leg-2 {
+    margin-left: 40px;
+    transform: skew(15deg);
+}
+
+.base {
+    height: 8px;
+    width: 180px;
+    background-color: #004d00;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 650px) {
+    .helikopter-legs {
+        padding-left: 99.999px;
+    }
+
+    .leg {
+        width: 4.444px;
+        height: 22.222px;
+    }
+
+    base {
+        border-radius: 5.555px;
+    }
+    
+    .leg-1 {
+        margin-right: 22.222px;
+        transform: skew(-15deg);
+    }
+    
+    .leg-2 {
+        margin-left: 22.222px;
+        transform: skew(15deg);
+    }
+    
+    .base {
+        height: 4.444px;
+        width: 99.999px;
+    }
+}
+
+.btn {
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.helikopter-button {
+    padding: 0.6rem 0.9rem;
+    border-radius: 18px;
+    border-style: none;
+    background-color: #b800e6;
+    color: cornsilk;
+    font-size: 1.2rem;
+}
+
+.helikopter-button:hover {
+    background-color: #9900cc;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 650px)
+{
+    .helikopter-button {
+        padding: 0.3rem 0.45rem;
+        font-size: 1rem;
+    }
+}
+.musique {
+    display: none;
+}
+
+footer {
+    width: 100vw;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: no-wrap;
+    background-color: rgba(255, 255, 255, 0.3);;
+    border-radius: 10% 10% 0 0;
+
+    transition: height 0.5s ease-in-out, background-color 0.5s ease-in-out;
+
+    overflow: hidden;
+}
+
+footer:hover {
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-handle {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 5%;
+    height: 4px;
+    border-radius: 2px;
+    margin-top: 9px;
+    flex-shrink: 0;
+}
+
+.foot-note {
+    padding-top: 5px;
+    color: #333333;
+}
